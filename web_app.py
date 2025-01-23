@@ -52,7 +52,7 @@ class TimeSeriesLagModel:
                 'end_date': end_date
             }
 
-    def train_models_no_eval(self, num_boost_round=100, early_stopping_rounds=100, verbose_eval=100):
+    def train_models_no_eval(self, num_boost_round=500, early_stopping_rounds=100, verbose_eval=100):
         for lag_hours, data in self.datasets.items():
             self.models[lag_hours] = xgb.train(
                 self.params,
